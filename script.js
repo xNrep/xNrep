@@ -1,5 +1,5 @@
 const extensions = [
-  { name: "XN Server Storage", cat: "storage", icon: "☁", desc: "Remote storage for your projects, using only your server.", tags: ["Server-only", "Cloud Save", "GET / POST"] },
+  { name: "XN Server Storage", cat: "storage", icon: "☁", status: "BROKEN", desc: "Remote storage for your projects, using only your server.", tags: ["Server-only", "Cloud Save", "GET / POST"] },
   { name: "XN Text Filter", cat: "text", icon: "Aa", desc: "Filter unwanted content with a built-in list and custom words.", tags: ["Filtering", "Built-in list", "Custom words"] },
   { name: "XN Color Picker", cat: "color", icon: "◉", desc: "Choose a color and easily convert between HEX and RGB.", tags: ["Color Picker", "HEX", "RGB"] },
   { name: "XN Color Values", cat: "color", icon: "◆", desc: "Create named color values that can be used in your project.", tags: ["Named Colors", "HEX", "RGB"] }
@@ -36,9 +36,10 @@ function render() {
   count.textContent = `${list.length} extension${list.length === 1 ? "" : "s"}`;
   grid.innerHTML = list.map(x => {
     const base = files[x.name];
+    const statusLabel = x.status ? `<span class="tag broken">${esc(x.status)}</span>` : "";
     return `<article class="card">
       <div class="icon">${x.icon}</div>
-      <span class="tag">${names[x.cat]}</span>
+      <div>${statusLabel}<span class="tag">${names[x.cat]}</span></div>
       <h3>${esc(x.name)}</h3>
       <p>${esc(x.desc)}</p>
       <div>${x.tags.map(t => `<span class="feature">${esc(t)}</span>`).join("")}</div>
