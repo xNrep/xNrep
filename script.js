@@ -37,13 +37,16 @@ function render() {
   grid.innerHTML = list.map(x => {
     const base = files[x.name];
     const statusLabel = x.status ? `<span class="tag broken">${esc(x.status)}</span>` : "";
+    const isDisabled = x.status === "BROKEN";
+    const buttonClass = isDisabled ? "button disabled" : "button";
+    const downloadAttr = isDisabled ? "disabled" : "";
     return `<article class="card">
       <div class="icon">${x.icon}</div>
       <div>${statusLabel}<span class="tag">${names[x.cat]}</span></div>
       <h3>${esc(x.name)}</h3>
       <p>${esc(x.desc)}</p>
       <div>${x.tags.map(t => `<span class="feature">${esc(t)}</span>`).join("")}</div>
-      <a class="button" href="${base}.txt" download>Download</a>
+      <a class="${buttonClass}" href="${isDisabled ? "#" : base + ".txt"}" download ${downloadAttr} ${isDisabled ? "onclick=\"return false;\"" : ""}>Download</a>
     </article>`;
   }).join("");
   empty.hidden = list.length !== 0;
