@@ -121,11 +121,11 @@ Make a full HTML/CSS/JS page generator with Blockly engine.
 ## `// GITHUB STATS`
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=dark&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=xNrep&show_icons=true&theme=dark&hide_border=true" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=dark&hide_border=true" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=xNrep&layout=compact&theme=dark&hide_border=true" />
 </p>
 
 ---
